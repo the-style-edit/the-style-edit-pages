@@ -11,7 +11,7 @@ export function SiteFooter() {
           <a className="footer-social" href={pinterestUrl} target="_blank" rel="noopener noreferrer">Follow on Pinterest <span aria-hidden="true">↗</span></a>
         </div>
         <div className="footer-links">
-          <div><h2>Explore</h2><Link href="/shop/">The edit</Link><Link href="/articles/">Journal</Link><Link href="/about/">About us</Link></div>
+          <div><h2>Explore</h2><Link href="/discover/">Discover</Link><Link href="/articles/">Journal</Link><Link href="/about/">About us</Link></div>
           <div><h2>Information</h2><Link href="/contact/">Contact</Link><Link href="/affiliate-disclosure/">Affiliate disclosure</Link><Link href="/privacy/">Privacy policy</Link><Link href="/terms/">Terms</Link></div>
         </div>
       </div>

@@ -1,53 +1,72 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AdSlot } from "@/components/AdSlot";
 import { ArticleCard } from "@/components/ArticleCard";
+import { HomeHeroCarousel } from "@/components/HomeHeroCarousel";
 import { ProductCards } from "@/components/ProductCards";
 import { articles } from "@/lib/articles";
 import { categories } from "@/lib/products";
 import { assetPath } from "@/lib/site";
 
+const categoryImages: Record<string, { src: string; alt: string }> = {
+  outerwear: { src: "/images/home-hero-city.png", alt: "Illustrative camel coat winter outfit" },
+  knitwear: { src: "/images/editorial-cover.png", alt: "Illustrative neutral knitwear look" },
+  dresses: { src: "/images/winter-flatlay.png", alt: "Illustrative winter wardrobe layers" },
+  shoes: { src: "/images/winter-flatlay.png", alt: "Illustrative boots and winter outfit pieces" },
+  accessories: { src: "/images/editorial-cover.png", alt: "Illustrative neutral wardrobe accessories" },
+};
+
 export default function Home() {
   return (
     <>
-      <section className="home-hero">
-        <Image src={assetPath("/images/editorial-cover.png")} alt="Illustrative editorial portrait in a camel coat and cream knit" fill priority sizes="100vw" className="hero-image" />
-        <div className="hero-shade" />
-        <div className="shell hero-content">
-          <div className="hero-copy">
-            <p className="eyebrow hero-eyebrow">THE STYLE EDIT <span>—</span> WINTER EDITION</p>
-            <h1>Style is in<br /><em>the details.</em></h1>
-            <p className="hero-deck">Considered outfit ideas and smarter shopping notes for a wardrobe that feels entirely yours.</p>
-            <div className="button-row"><Link className="button button-dark" href="/shop/">Explore the edit <span aria-hidden="true">↗</span></Link><Link className="hero-secondary" href="/articles/">Read the journal <span aria-hidden="true">→</span></Link></div>
-          </div>
-          <span className="hero-image-label">AI-GENERATED STYLE INSPIRATION · ITEMS MAY DIFFER</span>
-        </div>
-      </section>
+      <HomeHeroCarousel />
 
-      <section className="intro-band shell">
-        <span className="section-number">01 / THE POINT OF VIEW</span>
+      <section className="home-promise shell">
+        <span className="eyebrow">THE STYLE EDIT POINT OF VIEW</span>
         <p>Look expensive. <em>Spend less.</em> Dress like yourself.</p>
-        <span className="intro-aside">More outfits from what you own.<br />Better choices when you buy.</span>
+        <Link className="text-link" href="/discover/">Start discovering <span aria-hidden="true">↗</span></Link>
       </section>
 
-      <section className="section-spacing shell" aria-labelledby="categories-title">
-        <div className="section-heading"><div><span className="eyebrow">THE WARDROBE INDEX</span><h2 id="categories-title">Browse by <em>category.</em></h2></div><Link className="text-link" href="/shop/">View the full edit <span aria-hidden="true">↗</span></Link></div>
-        <div className="category-grid">
-          {categories.map((category) => <Link className={`category-card category-${category.tone}`} key={category.slug} href={`/shop/${category.slug}/`}><span>{category.index} / {category.countLabel}</span><strong>{category.name}</strong><span className="category-arrow" aria-hidden="true">↗</span></Link>)}
+      <section className="category-section shell" aria-labelledby="categories-title">
+        <div className="section-heading"><div><span className="eyebrow">BROWSE THE WARDROBE</span><h2 id="categories-title">Find your <em>kind of piece.</em></h2></div><Link className="text-link" href="/discover/">Discover everything <span aria-hidden="true">↗</span></Link></div>
+        <div className="category-grid category-grid-visual">
+          {categories.map((category) => {
+            const visual = categoryImages[category.slug];
+            return <Link className="category-card category-card-visual" key={category.slug} href={`/shop/${category.slug}/`}>
+              <Image src={assetPath(visual.src)} alt={visual.alt} fill sizes="(max-width: 760px) 44vw, 20vw" />
+              <span className="category-card-shade" />
+              <span className="category-card-index">{category.index} / STYLE INSPIRATION</span>
+              <strong>{category.name}</strong>
+              <span className="category-arrow" aria-hidden="true">↗</span>
+            </Link>;
+          })}
+        </div>
+        <p className="visual-note">Illustrative fashion imagery · pictured items may differ</p>
+      </section>
+
+      <div className="shell home-ad-wrap"><AdSlot /></div>
+
+      <section className="section-spacing shell" aria-labelledby="featured-title">
+        <div className="section-heading"><div><span className="eyebrow">THE STYLE EDIT PICKS</span><h2 id="featured-title">Featured <em>recommendations.</em></h2><p className="section-deck">A visual edit of pieces to look for. Verified merchant links will appear when they are ready.</p></div><Link className="text-link" href="/discover/">Shop the edit <span aria-hidden="true">↗</span></Link></div>
+        <ProductCards limit={4} />
+      </section>
+
+      <section className="home-story-band">
+        <div className="shell home-story-grid">
+          <Link className="home-story-image" href={`/articles/${articles[0].slug}/`}>
+            <Image src={assetPath("/images/winter-flatlay.png")} alt="Illustrative winter outfit pieces arranged as a wardrobe flat lay" fill sizes="(max-width: 760px) 100vw, 50vw" />
+            <span className="image-credit-small">Style inspiration · Items may differ</span>
+            <span className="image-link-mark" aria-hidden="true">↗</span>
+          </Link>
+          <div className="home-story-copy"><span className="eyebrow">THE JOURNAL / THE WINTER EDIT</span><h2>Five looks.<br /><em>Less to think about.</em></h2><p>Easy combinations for work, weekends, and everything in between.</p><Link className="button button-dark" href={`/articles/${articles[0].slug}/`}>View the story <span aria-hidden="true">↗</span></Link></div>
         </div>
       </section>
 
-      <section className="feature-section" aria-labelledby="feature-title">
-        <div className="shell feature-grid">
-          <div className="feature-image-wrap"><Image src={assetPath("/images/winter-flatlay.png")} alt="Illustrative winter wardrobe flat lay with coat, sweater, denim, scarf, and boots" fill sizes="(max-width: 760px) 100vw, 50vw" className="cover-image" /><span className="feature-image-note">STYLE INSPIRATION · ITEMS MAY DIFFER</span></div>
-          <div className="feature-copy"><span className="eyebrow">THE JOURNAL / THE WINTER ISSUE</span><span className="feature-index">01 — 05</span><h2 id="feature-title">Five ways to<br /><em>get dressed</em><br />this winter.</h2><p>A useful outfit formula beats a long wish list. Start with pieces you already own, then make every new addition count.</p><Link className="button button-dark" href="/articles/5-winter-styles-2026/">Read the story <span aria-hidden="true">↗</span></Link></div>
-        </div>
-      </section>
+      <section className="home-ad-wrap shell"><AdSlot label="Future banner placement" /></section>
 
-      <section className="section-spacing shell" aria-labelledby="notes-title"><div className="section-heading"><div><span className="eyebrow">THE CONSIDERED EDIT</span><h2 id="notes-title">Pieces with <em>purpose.</em></h2><p className="section-deck">Shopping notes to help you choose well. Specific merchant picks will appear only after we verify them.</p></div><Link className="text-link" href="/shop/">Browse all notes <span aria-hidden="true">↗</span></Link></div><ProductCards limit={4} /></section>
+      <section className="journal-section home-journal" aria-labelledby="journal-title"><div className="shell"><div className="section-heading"><div><span className="eyebrow">SHORT STORIES, GOOD IDEAS</span><h2 id="journal-title">The latest <em>looks.</em></h2></div><Link className="text-link" href="/articles/">All articles <span aria-hidden="true">↗</span></Link></div><div className="article-grid">{articles.slice(1).map((article) => <ArticleCard key={article.slug} article={article} />)}</div></div></section>
 
-      <section className="journal-section" aria-labelledby="journal-title"><div className="shell"><div className="section-heading"><div><span className="eyebrow">STORIES TO KEEP</span><h2 id="journal-title">From the <em>journal.</em></h2></div><Link className="text-link" href="/articles/">All articles <span aria-hidden="true">↗</span></Link></div><div className="article-grid">{articles.slice(1).map((article) => <ArticleCard key={article.slug} article={article} />)}</div></div></section>
-
-      <section className="closing-callout shell"><span className="eyebrow">A BETTER WARDROBE BEGINS HERE</span><h2>Buy less at random.<br /><em>Wear more on purpose.</em></h2><p>Good style is a set of small decisions. We&apos;re here to make those decisions easier.</p><Link className="button button-outline" href="/about/">Our point of view <span aria-hidden="true">↗</span></Link></section>
+      <section className="home-bottom-cta shell"><span className="eyebrow">A MORE THOUGHTFUL WARDROBE</span><h2>Find pieces that<br /><em>work harder.</em></h2><Link className="button button-outline" href="/discover/">Explore Discover <span aria-hidden="true">↗</span></Link></section>
     </>
   );
 }

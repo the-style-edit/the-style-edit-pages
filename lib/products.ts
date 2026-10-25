@@ -38,14 +38,16 @@ export type ShoppingNote = {
   lookFor: string;
   tone: string;
   articleSlug: string;
+  image: string;
+  imageAlt: string;
 };
 
 export const shoppingNotes: ShoppingNote[] = [
-  { id: "coat", name: "The tailored coat", category: "outerwear", description: "The layer that makes everyday outfits feel considered.", lookFor: "A shoulder that sits cleanly, room for a sweater, and a length that works with your most-worn bottoms.", tone: "sand", articleSlug: "what-to-check-before-buying-a-winter-coat" },
-  { id: "knit", name: "The textured knit", category: "knitwear", description: "An easy anchor for trousers, denim, and skirts.", lookFor: "A neckline you enjoy wearing, comfortable fabric against skin, and a shape that layers under your coat.", tone: "ivory", articleSlug: "5-winter-styles-2026" },
-  { id: "dress", name: "The simple dress", category: "dresses", description: "A quiet starting point for a week's worth of looks.", lookFor: "A length and fabric you can actually move in, plus a silhouette that works with shoes you own.", tone: "rose", articleSlug: "5-winter-styles-2026" },
-  { id: "boots", name: "The everyday boot", category: "shoes", description: "Ground a soft outfit with a practical finish.", lookFor: "Walkable heel height, weather-appropriate sole, and enough room for winter socks.", tone: "brown", articleSlug: "5-winter-styles-2026" },
-  { id: "scarf", name: "The accent scarf", category: "accessories", description: "One small color note can make familiar pieces feel new.", lookFor: "A color that works with your coats and a fabric you will want close to your face.", tone: "burgundy", articleSlug: "a-12-piece-winter-wardrobe" },
+  { id: "coat", name: "The tailored coat", category: "outerwear", description: "A polished layer for everyday outfits.", lookFor: "Room for your usual sweater, a comfortable shoulder, and a length that works with your most-worn bottoms.", tone: "sand", articleSlug: "what-to-check-before-buying-a-winter-coat", image: "/images/home-hero-city.png", imageAlt: "AI-generated style inspiration showing a camel coat outfit; pictured item may differ" },
+  { id: "knit", name: "The textured knit", category: "knitwear", description: "An easy anchor for trousers, denim, and skirts.", lookFor: "A neckline you enjoy wearing, comfortable fabric against skin, and a shape that layers under your coat.", tone: "ivory", articleSlug: "5-winter-styles-2026", image: "/images/editorial-cover.png", imageAlt: "AI-generated neutral knitwear style inspiration; pictured item may differ" },
+  { id: "dress", name: "The simple dress", category: "dresses", description: "A versatile starting point for a week's worth of looks.", lookFor: "A length and fabric you can move in, plus a silhouette that works with shoes you own.", tone: "rose", articleSlug: "5-winter-styles-2026", image: "/images/editorial-cover.png", imageAlt: "AI-generated fashion style inspiration; pictured item may differ" },
+  { id: "boots", name: "The everyday boot", category: "shoes", description: "A practical finish for cool-weather outfits.", lookFor: "Walkable heel height, a weather-appropriate sole, and room for winter socks.", tone: "brown", articleSlug: "5-winter-styles-2026", image: "/images/winter-flatlay.png", imageAlt: "AI-generated winter wardrobe flat lay with boots; pictured items may differ" },
+  { id: "scarf", name: "The accent scarf", category: "accessories", description: "One small color note can make familiar pieces feel new.", lookFor: "A color that works with your coats and a fabric you will want close to your face.", tone: "burgundy", articleSlug: "a-12-piece-winter-wardrobe", image: "/images/winter-flatlay.png", imageAlt: "AI-generated winter outfit accessories flat lay; pictured items may differ" },
 ];
 
 export function approvedProducts(category?: CategorySlug): AffiliateProduct[] {

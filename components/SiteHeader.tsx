@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const links = [
-  { href: "/shop/", label: "The edit" },
+  { href: "/discover/", label: "Discover" },
   { href: "/articles/", label: "Journal" },
   { href: "/about/", label: "Our story" },
 ];
@@ -19,7 +19,7 @@ export function SiteHeader() {
           <nav className="desktop-nav" aria-label="Main navigation">
             {links.map((link) => <Link key={link.href} href={link.href}>{link.label}</Link>)}
           </nav>
-          <Link className="header-cta" href="/shop/">Explore the edit <span aria-hidden="true">↗</span></Link>
+          <Link className="header-cta" href="/discover/">Explore the edit <span aria-hidden="true">↗</span></Link>
           <details className="mobile-menu">
             <summary aria-label="Open menu"><span></span><span></span></summary>
             <nav aria-label="Mobile navigation">

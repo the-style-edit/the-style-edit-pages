@@ -6,6 +6,8 @@ export type ArticleSection = {
   paragraphs: string[];
   takeaways?: string[];
   shoppingNoteIds?: string[];
+  image?: string;
+  imageAlt?: string;
 };
 
 export type Article = {
@@ -51,6 +53,8 @@ export const articles: Article[] = [
         ],
         takeaways: ["Try a coat that closes over your thickest regular sweater.", "Keep the trousers long enough to meet your shoes cleanly."],
         shoppingNoteIds: ["coat", "knit"],
+        image: "/images/home-hero-city.png",
+        imageAlt: "AI-generated winter outfit inspiration with a camel coat and cream knit; items may differ",
       },
       {
         eyebrow: "Look 02 / The weekend uniform",
@@ -61,6 +65,8 @@ export const articles: Article[] = [
         ],
         takeaways: ["Repeat your best-fitting jeans before buying a new pair.", "Choose boot height with your actual jean hem in mind."],
         shoppingNoteIds: ["knit", "boots"],
+        image: "/images/editorial-cover.png",
+        imageAlt: "AI-generated neutral knitwear outfit inspiration; pictured items may differ",
       },
       {
         eyebrow: "Look 03 / The tonal outfit",
@@ -71,6 +77,8 @@ export const articles: Article[] = [
         ],
         takeaways: ["Match the warmth of the colors rather than chasing identical shades.", "Use one structured piece to balance softer layers."],
         shoppingNoteIds: ["coat", "scarf"],
+        image: "/images/winter-flatlay.png",
+        imageAlt: "AI-generated winter wardrobe flat lay; pictured items may differ",
       },
       {
         eyebrow: "Look 04 / The dressed-up layer",
@@ -81,6 +89,8 @@ export const articles: Article[] = [
         ],
         takeaways: ["Test layers together for comfort before buying another dress.", "Balance a fluid dress with a more substantial shoe."],
         shoppingNoteIds: ["dress", "boots"],
+        image: "/images/editorial-cover.png",
+        imageAlt: "AI-generated layered winter outfit inspiration; pictured items may differ",
       },
       {
         eyebrow: "Look 05 / The travel day",
@@ -91,6 +101,8 @@ export const articles: Article[] = [
         ],
         takeaways: ["Choose layers that adapt to indoor heat.", "Keep the most comfortable shoe that still works with the outfit."],
         shoppingNoteIds: ["knit", "scarf"],
+        image: "/images/home-hero-city.png",
+        imageAlt: "AI-generated neutral winter travel outfit inspiration; pictured items may differ",
       },
     ],
     closing: "Pick one formula that fits your actual week, try it with what you own, and write down the missing piece only after wearing it. That is usually a better shopping list than a whole new wardrobe.",
@@ -110,9 +122,9 @@ export const articles: Article[] = [
       "A capsule wardrobe is useful only if it reflects your days. Twelve is a planning tool, not a rule or a shopping target. Pull out the pieces you already wear, then use this framework to see which roles are covered.",
     ],
     sections: [
-      { eyebrow: "Start here", heading: "Choose your real week", paragraphs: ["Count how many days you dress for work, home, social plans, and travel. A wardrobe built for someone else's calendar is unlikely to help you. Choose two base colors you already wear often and one optional accent."], takeaways: ["Write down your most repeated outfit before planning anything new.", "Keep climate and laundry frequency in view."] },
-      { eyebrow: "The 12 roles", heading: "Build a set that mixes", paragraphs: ["A useful starting mix is two outer layers, three tops or knits, three bottoms, one dress or extra top, two pairs of shoes, and one accessory. Swap the dress for another bottom if that fits your life better. The goal is coverage across your week, not a perfect number."], takeaways: ["Choose silhouettes that work in at least three combinations.", "Keep your favorite existing piece even if it breaks a capsule 'rule'."], shoppingNoteIds: ["coat", "knit", "boots", "scarf"] },
-      { eyebrow: "Before checkout", heading: "Test the combinations", paragraphs: ["Lay out five complete outfits, including shoes and outerwear. Photograph the ones you like. If one piece appears in only one look, ask whether it is genuinely useful or just attractive on its own. If a gap remains, specify the fit, fabric, and budget before searching."], takeaways: ["Shop for a role, not a vague trend.", "Check care and return terms as carefully as color."] },
+      { eyebrow: "Start here", heading: "Choose your real week", paragraphs: ["Count how many days you dress for work, home, social plans, and travel. A wardrobe built for someone else's calendar is unlikely to help you. Choose two base colors you already wear often and one optional accent."], takeaways: ["Write down your most repeated outfit before planning anything new.", "Keep climate and laundry frequency in view."], image: "/images/editorial-cover.png", imageAlt: "AI-generated neutral wardrobe inspiration; pictured items may differ" },
+      { eyebrow: "The 12 roles", heading: "Build a set that mixes", paragraphs: ["A useful starting mix is two outer layers, three tops or knits, three bottoms, one dress or extra top, two pairs of shoes, and one accessory. Swap the dress for another bottom if that fits your life better. The goal is coverage across your week, not a perfect number."], takeaways: ["Choose silhouettes that work in at least three combinations.", "Keep your favorite existing piece even if it breaks a capsule 'rule'."], shoppingNoteIds: ["coat", "knit", "boots", "scarf"], image: "/images/winter-flatlay.png", imageAlt: "AI-generated winter capsule wardrobe flat lay; pictured items may differ" },
+      { eyebrow: "Before checkout", heading: "Test the combinations", paragraphs: ["Lay out five complete outfits, including shoes and outerwear. Photograph the ones you like. If one piece appears in only one look, ask whether it is genuinely useful or just attractive on its own. If a gap remains, specify the fit, fabric, and budget before searching."], takeaways: ["Shop for a role, not a vague trend.", "Check care and return terms as carefully as color."], image: "/images/home-hero-city.png", imageAlt: "AI-generated city outfit inspiration; pictured items may differ" },
     ],
     closing: "A capsule should make getting dressed easier. Keep the version that serves your life, even if it has eleven pieces or twenty.",
   },
@@ -129,9 +141,9 @@ export const articles: Article[] = [
     imageCredit: "AI-generated style inspiration; pictured pieces are not specific products for sale.",
     intro: ["A coat is often one of the most visible pieces in a winter outfit. Before choosing by color alone, test whether it works with the layers, weather, and routines you actually have."],
     sections: [
-      { eyebrow: "01 / Fit", heading: "Try it over your real layers", paragraphs: ["The shoulders should sit comfortably and the coat should close without pulling over your usual winter knit. Reach forward and sit down. A coat that looks elegant while standing still but restricts movement will be difficult to wear often."], takeaways: ["Check sleeve length with your arms moving.", "Compare the hem with your regular skirts or trousers."], shoppingNoteIds: ["coat"] },
-      { eyebrow: "02 / Climate", heading: "Match the coat to your winter", paragraphs: ["A dress coat, a rain shell, and an insulated coat solve different problems. Consider wind, rain, snow, and time outdoors. A beautiful wool-look coat may not replace weatherproof outerwear if your commute is wet or very cold."], takeaways: ["Read the fabric composition and lining details.", "Think about how much time you spend outside, not just your destination."] },
-      { eyebrow: "03 / Ownership", heading: "Check the details that last", paragraphs: ["Look closely at seams, buttons, pocket placement, and care instructions. Compare the return window with the time you need to try it at home. If shopping online, use the garment measurements rather than relying only on a size label."], takeaways: ["Confirm care requirements fit your budget and routine.", "Save the product page and return policy before ordering."] },
+      { eyebrow: "01 / Fit", heading: "Try it over your real layers", paragraphs: ["The shoulders should sit comfortably and the coat should close without pulling over your usual winter knit. Reach forward and sit down. A coat that looks elegant while standing still but restricts movement will be difficult to wear often."], takeaways: ["Check sleeve length with your arms moving.", "Compare the hem with your regular skirts or trousers."], shoppingNoteIds: ["coat"], image: "/images/home-hero-city.png", imageAlt: "AI-generated camel coat outfit inspiration; pictured item may differ" },
+      { eyebrow: "02 / Climate", heading: "Match the coat to your winter", paragraphs: ["A dress coat, a rain shell, and an insulated coat solve different problems. Consider wind, rain, snow, and time outdoors. A beautiful wool-look coat may not replace weatherproof outerwear if your commute is wet or very cold."], takeaways: ["Read the fabric composition and lining details.", "Think about how much time you spend outside, not just your destination."], image: "/images/winter-flatlay.png", imageAlt: "AI-generated winter outerwear flat lay; pictured items may differ" },
+      { eyebrow: "03 / Ownership", heading: "Check the details that last", paragraphs: ["Look closely at seams, buttons, pocket placement, and care instructions. Compare the return window with the time you need to try it at home. If shopping online, use the garment measurements rather than relying only on a size label."], takeaways: ["Confirm care requirements fit your budget and routine.", "Save the product page and return policy before ordering."], image: "/images/editorial-cover.png", imageAlt: "AI-generated coat and knit style inspiration; pictured items may differ" },
     ],
     closing: "The best coat is the one that handles your actual winter and works with the clothes already in your closet.",
   },
