@@ -1,6 +1,6 @@
 # The Style Edit website
 
-Public Next.js source for [The Style Edit](https://sumitgangwar127.github.io/the-style-edit-pages/), a fashion editorial site with outfit articles and category-based shopping guidance.
+Public Next.js source for [The Style Edit](https://the-style-edit.github.io/the-style-edit-pages/), a fashion editorial site with outfit articles and category-based shopping guidance.
 
 ## Run locally
 

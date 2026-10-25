@@ -31,7 +31,7 @@ jobs:
         run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: /the-style-edit-pages
-          NEXT_PUBLIC_SITE_URL: https://sumitgangwar127.github.io/the-style-edit-pages
+          NEXT_PUBLIC_SITE_URL: https://the-style-edit.github.io/the-style-edit-pages
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
